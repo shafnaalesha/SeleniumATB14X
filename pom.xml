@@ -20,7 +20,7 @@
       <artifactId>selenium-java</artifactId>
       <version>4.39.0</version>
     </dependency>
-    <!-- TestNG -->
+    <!-- TestNG. -->
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
