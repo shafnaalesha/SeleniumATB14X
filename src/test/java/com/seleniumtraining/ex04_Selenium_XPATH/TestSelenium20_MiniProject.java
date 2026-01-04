@@ -9,8 +9,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class TestSelenium20_MiniProject extends CommonToAll {
     @Owner("Pramod")
@@ -20,9 +24,15 @@ public class TestSelenium20_MiniProject extends CommonToAll {
 
     public void test_OHRM_login() throws InterruptedException {
         WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         openBrowser(driver,"https://awesomeqa.com/hr/web/index.php/auth/login");
 
+        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+
         WebElement input_username = driver.findElement(By.xpath("//input[@name=\"username\"]"));
+
+        //WebElement input_username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='username']")));
         WebElement input_password = driver.findElement(By.xpath("//input[@placeholder=\"Password\"]"));
         WebElement button = driver.findElement(By.xpath("//button"));
 
