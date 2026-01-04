@@ -22,7 +22,7 @@ public class TestSelenium20_MiniProject extends CommonToAll {
         WebDriver driver = new ChromeDriver();
         openBrowser(driver,"https://awesomeqa.com/hr/web/index.php/auth/login");
 
-        WebElement input_username = driver.findElement(By.xpath("//input[@placeholder=\"Username\"]"));
+        WebElement input_username = driver.findElement(By.xpath("//input[@name=\"username\"]"));
         WebElement input_password = driver.findElement(By.xpath("//input[@placeholder=\"Password\"]"));
         WebElement button = driver.findElement(By.xpath("//button"));
 
