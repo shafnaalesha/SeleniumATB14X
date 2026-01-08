@@ -1,8 +1,13 @@
 package com.seleniumtraining;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class CommonToAll {
     // Common functionality for all tests
@@ -27,4 +32,9 @@ public void customWait(int time){
 
         }
 }
+public void waitForVisibility(WebDriver driver,int timeInseconds,String xpath) {
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeInseconds));
+    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
 }
+}
+
